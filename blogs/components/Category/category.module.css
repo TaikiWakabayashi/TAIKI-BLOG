@@ -1,0 +1,89 @@
+.categorySection {
+  padding: 8rem 0;
+  text-align: center;
+  background-color: whitesmoke;
+}
+
+.categorySection > h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+
+.subTitle {
+  display: block;
+  font-size: 1.7rem;
+  color: rgb(161, 161, 161);
+  letter-spacing: 8px;
+  margin: 10px 0;
+}
+
+.categoryWrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 3%;
+  text-align: center;
+  margin: 8rem 0;
+}
+
+.genre {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.genreSub {
+  font-size: 1.2rem;
+  display: block;
+  color: rgb(161, 161, 161);
+}
+
+.categoryCard {
+  width: calc(97% / 2);
+  height: 100%;
+  padding: 10px;
+  margin-bottom: 3%;
+}
+
+.topImgArea {
+  width: 100%;
+  border: 3px solid black;
+}
+
+.topImgArea > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.categoryList {
+  margin: 15px 0;
+  padding-left: 2rem;
+}
+.list {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px dashed black;
+  padding-bottom: 1.2rem;
+}
+@media (max-width: 780px) {
+  .topImgArea > img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .categoryWrapper {
+    width: 100%;
+    margin: 8rem auto;
+  }
+  .categoryCard {
+    width: 95%;
+    margin: 0 auto 3% auto;
+  }
+  .topImgArea > img {
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,76 @@
+.pickupSection {
+  padding: 8rem 0;
+  text-align: center;
+  background-color: #5a8ad8;
+}
+
+.pickupSection > h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+
+.subTitle {
+  display: block;
+  font-size: 1.3rem;
+  color: white;
+  letter-spacing: 8px;
+  margin: 10px 0;
+}
+
+.pickupList {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  padding: 0 3%;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5%;
+  grid-template-rows: 1fr 1fr;
+  margin: 8rem 0;
+}
+
+@media (max-width: 834px) {
+  .pickupList {
+    height: 170vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .pickupList {
+    width: 100%;
+    max-width: 400px;
+    height: 330vh;
+    gap: 2%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin: 8rem auto;
+  }
+}
+
+.pickupCard {
+  width: 100%;
+  height: 100%;
+  border: 3px solid black;
+  padding: 20px;
+  background-color: white;
+}
+.pickupCard > h2 {
+  font-size: 1.5rem;
+}
+.pickupCard > p {
+  color: rgb(161, 161, 161);
+}
+
+.eyecatch {
+  width: 100%;
+  height: 160px;
+  background-color: #f0eb45;
+}
+
+.eyecatch > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

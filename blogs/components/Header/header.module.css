@@ -1,0 +1,189 @@
+/* ------ ヘッダー全般 ------ */
+.header {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 95px;
+  padding: 0 32px;
+  background-color: white;
+}
+
+.headerWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ------ ロゴ ------ */
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  display: block;
+  font-size: 3.5rem;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+}
+
+@media (max-width: 1018px) {
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+/* ------ ナビゲーション ------ */
+@media (min-width: 835px) {
+  .nav {
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 834px) {
+  .nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    place-content: center;
+    text-align: center;
+    position: fixed;
+    inset: 0 -100% 0 100%;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    transition: transform 0.4s;
+  }
+
+  .open.nav {
+    transform: translateX(-100%);
+  }
+}
+
+.nav ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav ul > li {
+  width: calc(100% / 4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  margin-right: 10px;
+}
+
+@media (max-width: 834px) {
+  .nav ul {
+    width: 100%;
+    height: 400px;
+    display: grid;
+    grid-template-rows: 100px 100px 100px 100px;
+    grid-template-columns: 1fr;
+  }
+  .nav ul > li {
+    width: 100%;
+    margin: 20px 0;
+  }
+}
+
+.nav ul > li > a {
+  display: block;
+  width: 100%;
+  position: relative;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+.nav ul > li > a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  transition: all 0.3s;
+  transform: scale(0, 1);
+  transform-origin: left top;
+}
+
+@media (min-width: 835px) {
+  .nav ul > li > a::after {
+    background-color: black;
+  }
+}
+@media (max-width: 834px) {
+  .nav ul > li > a::after {
+    background-color: white;
+  }
+}
+
+.nav ul > li > a:hover::after {
+  transform: scale(1, 1);
+}
+
+.subTitle {
+  display: block;
+  color: rgb(161, 161, 161);
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ------ ハンバーガーメニューデザイン ------ */
+@media (min-width: 835px) {
+  .btn {
+    display: none;
+  }
+}
+@media (max-width: 834px) {
+  .btn {
+    position: relative;
+    z-index: 200;
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 100%;
+    cursor: pointer;
+  }
+}
+
+.btn::before,
+.btn::after,
+.bar {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 1px;
+  background-color: currentColor;
+  transition: all 0.4s;
+}
+
+.close.btn::before {
+  transform: translateY(20px);
+}
+.close.btn::after {
+  transform: translateY(-20px);
+}
+
+.open .bar {
+  background-color: rgba(255, 255, 255, 0.7);
+  transform: scale(0);
+}
+.open.btn::before {
+  background-color: rgba(255, 255, 255, 0.7);
+  transform: translateY(30px) rotate(-45deg);
+}
+.open.btn::after {
+  background-color: rgba(255, 255, 255, 0.7);
+  transform: translateY(-33px) rotate(45deg);
+}

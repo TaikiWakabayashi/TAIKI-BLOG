@@ -1,0 +1,140 @@
+/* ------ トップタイトル ------ */
+.newpostSection {
+  padding: 8rem 0;
+  text-align: center;
+}
+.newpostSection > h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+
+.subTitle {
+  display: block;
+  font-size: 1.7rem;
+  color: rgb(161, 161, 161);
+  letter-spacing: 8px;
+  margin: 10px 0;
+}
+
+/* ------ トップタイトル ------ */
+.postWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 8rem 0;
+}
+
+/* ------ 最新の投稿 ------ */
+.latestPost {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.pickupPostCard {
+  position: relative;
+  width: calc(100% - 25px);
+  max-width: 450px;
+  height: 450px;
+  border: 2px solid black;
+  background-color: #5a8ad8;
+  padding: 10px;
+}
+
+.pickupPostCard::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 5%;
+  left: 5%;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  background-color: black;
+}
+
+.pickupItem {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.pickupImg {
+  width: 100%;
+  height: 250px;
+}
+.pickupImg > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.postList {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.postItem {
+  width: 100%;
+  height: calc(100% / 3 - 10px);
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.postItemGrid {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 35% 60%;
+  grid-template-rows: 100%;
+  gap: 5%;
+}
+
+.postImgs {
+  width: 100%;
+}
+.postImgs > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 3px solid black;
+}
+
+.postExp {
+  width: 100%;
+}
+.postExp > h2 {
+  font-size: 1.5rem;
+}
+.postExp > p {
+  color: rgb(161, 161, 161);
+}
+/* レスポンシブ */
+@media (max-width: 1000px) {
+  .postWrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10%;
+  }
+  .latestPost {
+    justify-content: center;
+  }
+  .postList {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .postImgs > img {
+    height: auto;
+  }
+}
+@media (max-width: 500px) {
+  .latestPost {
+    justify-content: start;
+  }
+}
