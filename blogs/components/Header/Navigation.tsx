@@ -29,7 +29,13 @@ export const Navigation = () => {
     <div className={toggle ? `${styles.open} ${styles.nav}` : `${styles.nav}`}>
       <ul>
         {listArr.map((item) => {
-          return <List categoryName={item.categoryName} upper={item.upper} />;
+          return (
+            <List
+              categoryName={item.categoryName}
+              upper={item.upper}
+              key={item.categoryName}
+            />
+          );
         })}
       </ul>
     </div>
