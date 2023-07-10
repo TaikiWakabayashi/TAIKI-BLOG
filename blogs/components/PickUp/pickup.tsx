@@ -1,7 +1,6 @@
 import styles from "./pickup.module.css";
 import MainContainer from "../Container/main-container";
 import PickupItem from "./pickupItem";
-import WideButton from "../Button/widebutton";
 
 const PickUp = () => {
   return (

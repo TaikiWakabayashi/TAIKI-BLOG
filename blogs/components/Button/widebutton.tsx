@@ -7,9 +7,9 @@ type propsType = {
 
 const WideButton = ({ title }: propsType) => {
   return (
-    <a href="#" className={styles.wideButton}>
+    <Link href="#" className={styles.wideButton}>
       {title}
-    </a>
+    </Link>
   );
 };
 
