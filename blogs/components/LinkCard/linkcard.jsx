@@ -4,9 +4,7 @@ import Link from "next/link";
 const LinkCard = ({ cardData, children }) => {
   //内部リンクか外部リンク化判定
   const blank = cardData.url.indexOf(process.env.SERVICE_DOMAIN) === -1;
-  const blankProp = blank;
-  console.log("----- cardData -----");
-  console.log(cardData)
+  const blankProp = blank
     ? {
         target: "_blank",
         rel: "noopener nofollow",
