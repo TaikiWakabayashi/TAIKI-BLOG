@@ -1,3 +1,4 @@
+/* 基本設定 */
 html,
 body {
   height: 100%;
@@ -14,4 +15,40 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+h1 {
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid #5c93bb2b;
+}
+
+h3 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 2rem;
+}
+
+h5 {
+  font-size: 1.75rem;
+}
+
+p {
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+/* コードブロックの文字サイズ変更 */
+pre code.hljs {
+  font-size: 1.7rem;
+  border-radius: 8px;
 }

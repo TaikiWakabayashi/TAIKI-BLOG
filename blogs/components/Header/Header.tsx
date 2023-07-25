@@ -11,19 +11,39 @@ export const ToggleContext = createContext(
   {} as { toggle: boolean; setToggle: Dispatch<SetStateAction<boolean>> }
 );
 
-export const Header = () => {
-  const [toggle, setToggle] = useState(false);
+type headerProps = {
+  isActive: boolean;
+};
 
+export const Header = ({ isActive }: headerProps) => {
+  const [toggle, setToggle] = useState(false);
   return (
-    <header className={styles.header}>
-      <div className={styles.headerWrapper}>
-        <Logo />
-        <ToggleContext.Provider value={{ toggle, setToggle }}>
-          <Navigation />
-          <NavButton />
-        </ToggleContext.Provider>
-      </div>
-    </header>
+    <>
+      <header className={styles.header}>
+        <div className={styles.headerWrapper}>
+          <Logo />
+          <ToggleContext.Provider value={{ toggle, setToggle }}>
+            <Navigation />
+            <NavButton />
+          </ToggleContext.Provider>
+        </div>
+      </header>
+      <header
+        className={
+          isActive
+            ? `${styles.fixedHeader} ${styles.active}`
+            : `${styles.fixedHeader} ${styles.notActive}`
+        }
+      >
+        <div className={styles.headerWrapper}>
+          <Logo />
+          <ToggleContext.Provider value={{ toggle, setToggle }}>
+            <Navigation />
+            <NavButton />
+          </ToggleContext.Provider>
+        </div>
+      </header>
+    </>
   );
 };
 

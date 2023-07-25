@@ -1,8 +1,9 @@
 import styles from "./footer.module.css";
 import MainContainer from "../Container/main-container";
 import FooterItem from "./footerItem";
+import React from "react";
 
-const Footer = () => {
+const Footer = React.memo(() => {
   const domObj = [
     {
       _className: "profile",
@@ -33,6 +34,6 @@ const Footer = () => {
       </MainContainer>
     </footer>
   );
-};
+});
 
 export default Footer;

@@ -1,7 +1,9 @@
 .categorySection {
   padding: 8rem 0;
-  text-align: center;
-  background-color: whitesmoke;
+}
+.categorySection2 {
+  padding: 8rem 0;
+  background: #f3f3f3 none;
 }
 
 .categorySection > h1 {
@@ -21,30 +23,42 @@
 
 .categoryWrapper {
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 3%;
-  text-align: center;
-  margin: 8rem 0;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 1fr;
+  margin-bottom: 5rem;
+}
+
+@media (max-width: 834px) {
+  .categoryWrapper {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .categoryWrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
 }
 
 .genre {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
 }
 
 .genreSub {
   font-size: 1.2rem;
-  display: block;
+  display: inline-block;
+  margin-left: 10px;
   color: rgb(161, 161, 161);
 }
 
 .categoryCard {
-  width: calc(97% / 2);
+  width: 100%;
   height: 100%;
-  padding: 10px;
-  margin-bottom: 3%;
+  padding: 15px;
 }
 
 .topImgArea {

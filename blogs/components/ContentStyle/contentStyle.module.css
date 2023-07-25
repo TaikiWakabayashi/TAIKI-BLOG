@@ -1,0 +1,32 @@
+.stack > * + * {
+  margin-top: var(--stack-space, 1.5em);
+}
+
+.stack h2,
+.stack h3 {
+  --stack-space: 2em;
+}
+
+.stack h2 + *,
+.stack h3 + * {
+  --stack-space: 0.8em;
+}
+
+.stack h4 + *,
+.stack h5 + * {
+  --stack-space: 0.8em;
+}
+
+.stack p {
+  line-height: 1.5;
+  margin-top: 0.3em;
+}
+
+.stack ul {
+  padding: 5px 0;
+  list-style: revert;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  margin: 30px 0;
+}

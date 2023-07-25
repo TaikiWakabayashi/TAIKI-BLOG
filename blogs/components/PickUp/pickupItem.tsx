@@ -5,11 +5,13 @@ import Image from "next/image";
 const PickupItem = () => {
   return (
     <div className={styles.pickupCard}>
-      <div className={styles.eyecatch}>
-        <Image src={eyecatchImg} alt="" />
+      <div className={styles.cardWrapper}>
+        <div className={styles.eyecatch}>
+          <Image src={eyecatchImg} alt="" />
+        </div>
+        <h2>TITLE</h2>
+        <p>YEAR: MONTH: DATE TIME</p>
       </div>
-      <h2>TITLE</h2>
-      <p>YEAR: MONTH: DATE TIME</p>
     </div>
   );
 };

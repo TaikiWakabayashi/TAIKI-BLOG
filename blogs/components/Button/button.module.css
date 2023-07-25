@@ -1,40 +1,42 @@
+.btnArea {
+  width: 100%;
+  padding: 10px 0;
+}
+
 /* 横長ボタン */
 .wideButton {
-  position: relative;
+  color: black;
   display: block;
-  width: 77%;
-  max-width: 500px;
-  border: 3px solid black;
-  margin: 0 auto 8rem auto;
-  font-size: 2rem;
+  max-width: 260px;
+  margin: 3rem auto;
+  font-size: 12px;
   font-weight: bold;
-  padding: 8px;
+  padding: 15px 0;
   letter-spacing: 3px;
-  background-color: white;
-  transition: all 0.3s;
+  text-align: center;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  position: relative;
+  z-index: 1;
 }
 
 .wideButton::before {
   content: "";
-  display: block;
   position: absolute;
-  top: 23%;
-  left: 3%;
-  width: 100%;
+  width: 0%;
   height: 100%;
   background-color: black;
+  transition: all 0.3s;
+  font-size: 12px;
+  top: 0;
+  left: 0;
   z-index: -1;
 }
-.wideButton:hover {
-  background-color: #f0eb45;
+
+.wideButton:hover::before {
+  width: 100%;
 }
 
-.btn {
-  border: 3px solid black;
-  width: 200px;
-  height: 40px;
-  border-radius: 8px;
-  font-weight: bold;
-  background-color: #f0eb45;
-  margin-top: 1.5rem;
+.wideButton:hover {
+  color: white;
 }

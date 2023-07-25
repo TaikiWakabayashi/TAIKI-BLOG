@@ -1,16 +1,19 @@
 import Link from "next/link";
 import styles from "./button.module.css";
+import React from "react";
 
 type propsType = {
   title: string;
 };
 
-const WideButton = ({ title }: propsType) => {
+const WideButton = React.memo(({ title }: propsType) => {
   return (
-    <Link href="#" className={styles.wideButton}>
-      {title}
-    </Link>
+    <div className={styles.btnArea}>
+      <Link href="/" className={styles.wideButton}>
+        <span>{title}</span>
+      </Link>
+    </div>
   );
-};
+});
 
 export default WideButton;

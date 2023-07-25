@@ -9,11 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mdx-js/loader": "^2.3.0",
+    "@next/mdx": "^13.4.12",
+    "cheerio": "^1.0.0-rc.12",
+    "date-fns": "^2.30.0",
+    "highlight.js": "^11.8.0",
+    "html-react-parser": "^4.2.0",
     "microcms-js-sdk": "^2.5.0",
     "next": "13.2.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-icons": "^4.8.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0",
+    "styled-components": "^6.0.5"
   },
   "devDependencies": {
     "@types/node": "18.15.0",

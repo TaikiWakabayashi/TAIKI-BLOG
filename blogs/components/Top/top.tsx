@@ -13,8 +13,8 @@ export const Top = () => {
             <Image src={Tops} alt="" />
           </div>
         </div>
-        <Scroll />
       </div>
+      <Scroll />
     </>
   );
 };

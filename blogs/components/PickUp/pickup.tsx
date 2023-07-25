@@ -6,10 +6,10 @@ const PickUp = () => {
   return (
     <section className={styles.pickupSection}>
       <h1>
-        PICKUP<span className={styles.subTitle}>おすすめ投稿</span>
+        PICK UP<span className={styles.subTitle}>おすすめ投稿</span>
       </h1>
       <MainContainer>
-        <div className={styles.pickupList}>
+        <div className={styles.pickupWrapper}>
           <PickupItem />
           <PickupItem />
           <PickupItem />

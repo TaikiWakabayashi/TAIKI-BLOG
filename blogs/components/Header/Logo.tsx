@@ -1,11 +1,12 @@
 import styles from "./header.module.css";
+import Link from "next/link";
 
 export const Logo = () => {
   return (
     <div className={styles.logo}>
-      <a className={styles.title} href="#">
+      <Link className={styles.title} href="/">
         WAKA-BLOG
-      </a>
+      </Link>
     </div>
   );
 };

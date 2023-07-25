@@ -1,22 +1,26 @@
 import styles from "./category.module.css";
-import MainContainer from "../Container/main-container";
-import CategoryItem from "./categoryItem";
+import CategorySection from "./categorySection";
 
-const Category = () => {
+type propsType = {
+  title: string;
+  subTitle: string;
+  index: number;
+};
+
+const Category = ({ title, subTitle, index }: propsType) => {
+  const isEven: boolean = index % 2 == 0;
   return (
-    <section className={styles.categorySection}>
-      <h1>
-        CATEGORY<span className={styles.subTitle}>カテゴリー</span>
-      </h1>
-      <MainContainer>
-        <div className={styles.categoryWrapper}>
-          <CategoryItem title="転職" subTitle="JOB CHANGE" />
-          <CategoryItem title="プログラミング" subTitle="PROGRAMMING" />
-          <CategoryItem title="エンジニア" subTitle="ENGINEER" />
-          <CategoryItem title="プライベート" subTitle="PRIVATE" />
-        </div>
-      </MainContainer>
-    </section>
+    <>
+      {isEven ? (
+        <section className={styles.categorySection2}>
+          <CategorySection title={title} subTitle={subTitle} />
+        </section>
+      ) : (
+        <section className={styles.categorySection}>
+          <CategorySection title={title} subTitle={subTitle} />
+        </section>
+      )}
+    </>
   );
 };
 

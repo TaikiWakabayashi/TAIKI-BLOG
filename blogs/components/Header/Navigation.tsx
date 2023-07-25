@@ -1,5 +1,4 @@
 import styles from "./header.module.css";
-import Link from "next/link";
 import { List } from "./List";
 import { useToggleContext } from "./Header";
 
