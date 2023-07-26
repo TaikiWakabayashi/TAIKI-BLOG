@@ -10,9 +10,9 @@ import ConvertBody from "../../components/ContentStyle/ConvertBody";
 // import "highlight.js/styles/vs2015.css";
 import "highlight.js/styles/hybrid.css";
 import { createLinkCardDatas } from "../../lib/api";
-import type { GetStaticProps } from "next";
-import { Props, Params } from "../../types/props/propsType";
 import Footer from "../../components/Footer/footer";
+import { ColumnMain } from "../../components/Body/columnMain";
+import { EyeCatch } from "../../components/Image/eyeCatch";
 
 const TestPage = ({
   title,
@@ -24,33 +24,23 @@ const TestPage = ({
 }: props) => {
   const isHeaderActive = useHeaderScroll(300);
 
-  const styles = {
-    margin: "0px",
-    width: "100%",
-  };
-
   return (
     <>
       <Header isActive={isHeaderActive} />
       <MainContainer>
         <article>
-          <PostHeader title={title} subTitle="Blog Article" publish={publish} />
-
-          <figure style={styles}>
-            <Image
-              src={eyecatch.url}
-              alt=""
-              width={eyecatch.width}
-              height={eyecatch.height}
-              layout="responsive"
-              sizes="(max-width: 800px)"
-              priority
+          <ColumnMain>
+            <PostHeader
+              title={title}
+              subTitle="Blog Article"
+              publish={publish}
             />
-          </figure>
+            <EyeCatch eyecatch={eyecatch} />
+            <PostBody>
+              <ConvertBody contentHTML={content} cardDatas={cardDatas} />
+            </PostBody>
+          </ColumnMain>
         </article>
-        <PostBody>
-          <ConvertBody contentHTML={content} cardDatas={cardDatas} />
-        </PostBody>
       </MainContainer>
       <Footer />
     </>

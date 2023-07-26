@@ -4,7 +4,7 @@
   height: 95px;
   padding: 0 32px;
   background-color: white;
-  box-shadow: 5px -12px 7px 10px;
+  /* box-shadow: 5px -12px 7px 10px; */
 }
 
 .fixedHeader {
@@ -208,7 +208,12 @@
 /* PostHeader */
 .pHeaderWrapper {
   width: 100%;
-  padding: 20px 0;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.pHeaderWrapper > .title {
+  font-size: 4rem;
 }
 
 .pHeaderWrapper > .subTitle,

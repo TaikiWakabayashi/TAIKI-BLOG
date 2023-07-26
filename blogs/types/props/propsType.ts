@@ -1,4 +1,5 @@
 import { ParsedUrlQuery } from "node:querystring";
+import { ReactNode } from "react";
 
 export type props = {
   title: string;
@@ -20,4 +21,6 @@ export type Props = {
   props: any;
 };
 
-export interface Params extends ParsedUrlQuery {}
+export type childrenProps = {
+  children: ReactNode;
+};
