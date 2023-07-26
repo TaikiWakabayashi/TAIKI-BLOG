@@ -5,7 +5,7 @@ export const Logo = () => {
   return (
     <div className={styles.logo}>
       <Link className={styles.title} href="/">
-        WAKA-BLOG
+        waka-blog
       </Link>
     </div>
   );
