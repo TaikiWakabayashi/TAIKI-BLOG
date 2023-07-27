@@ -24,11 +24,18 @@ const TestPage = ({
 }: props) => {
   const isHeaderActive = useHeaderScroll(300);
 
+  const bYellow = {
+    backgroundColor: "#f0eb45",
+  };
+  const p = {
+    padding: "50px 0",
+  };
+
   return (
-    <>
+    <div style={bYellow}>
       <Header isActive={isHeaderActive} />
       <MainContainer>
-        <article>
+        <article style={p}>
           <ColumnMain>
             <PostHeader
               title={title}
@@ -43,7 +50,7 @@ const TestPage = ({
         </article>
       </MainContainer>
       <Footer />
-    </>
+    </div>
   );
 };
 
