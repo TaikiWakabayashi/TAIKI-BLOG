@@ -1,21 +1,44 @@
 import styles from "./newpost.module.css";
-import Logo from "/images/face-logo.jpg";
-import Image from "next/image";
+import Image from "next/legacy/image";
+import { NewIcon } from "../Icons/NewIcon";
+import ConvertDate from "../Date/convertDate";
+import Link from "next/link";
+import { useRecoilValue } from "recoil";
+import { newPostStates } from "../../context/blogContext";
 
 const LatestPost = () => {
+  const newPostState = useRecoilValue(newPostStates);
+
   return (
-    <div className={styles.latestPost}>
-      <div className={styles.pickupPostCard}>
-        <div className={styles.pickupItem}>
-          <div className={styles.pickupImg}>
-            <Image src={Logo} alt="" />
-          </div>
-          <h2>タイトル</h2>
-          <p>説明</p>
-          <p>2023年3月16日</p>
-        </div>
-      </div>
-    </div>
+    <>
+      {newPostState.map(({ slug, eyecatch, title, publishDate }, index) => {
+        if (index == 0) {
+          return (
+            <div className={styles.latestPost} key={index}>
+              <div className={styles.pickupPostCard}>
+                <NewIcon />
+                <div className={styles.pickupItem}>
+                  <Link href={`/blog/${slug}`}>
+                    <div className={styles.pickupImg}>
+                      <Image
+                        src={eyecatch.url}
+                        alt=""
+                        width={eyecatch.width}
+                        height={eyecatch.height}
+                        layout="responsive"
+                      />
+                    </div>
+                    <h2>{title}</h2>
+                    <p>説明</p>
+                    <ConvertDate dateISO={publishDate} />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          );
+        }
+      })}
+    </>
   );
 };
 

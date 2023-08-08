@@ -1,6 +1,7 @@
 .footer {
   width: 100%;
   padding: 8rem 0;
+  background-color: white;
 }
 
 .itemArea {
@@ -29,7 +30,7 @@
   width: 100%;
   height: 100%;
   border-bottom: 3px solid black;
-  background-image: url(../../images/top.jpg);
+  background-image: url(../../images/top.webp);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -41,7 +42,7 @@
   height: 135px;
   border: 3px solid black;
   border-radius: 50%;
-  background-image: url(../../images/topeyecatch.jpg);
+  background-image: url(../../images/topeyecatch.webp);
   background-position: center;
   background-size: cover;
   top: 135px;

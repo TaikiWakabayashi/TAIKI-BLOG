@@ -1,0 +1,47 @@
+.title {
+  border: none;
+}
+
+.postWrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.itemWrapper {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 200px 200px;
+  padding: 15px;
+}
+
+.imgArea,
+.imgArea > a,
+.descArea,
+.descArea > a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.imgArea > a > span {
+  height: 100% !important;
+}
+.imgArea > a > span > span {
+  padding: 0 !important;
+}
+
+.imgArea > a > span > img {
+  width: 100%;
+  /* min-height: 300px !important; */
+  object-fit: contain;
+  margin: 0 !important;
+}
+
+.link {
+  width: 100%;
+  height: 100%;
+}

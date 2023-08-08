@@ -6,8 +6,16 @@ export default function Document() {
       <Head>
         <link
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Sawarabi+Gothic&display=swap"
-          rel="stylesheet"
+          rel="preload"
+          as="style"
         />
+        <noscript>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Sawarabi+Gothic&display=swap"
+            rel="stylesheet"
+            type="text/css"
+          />
+        </noscript>
       </Head>
       <body>
         <Main />

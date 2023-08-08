@@ -1,26 +1,31 @@
 import styles from "./header.module.css";
 import { List } from "./List";
-import { useToggleContext } from "./Header";
+import { useRecoilValue } from "recoil";
+import { toggleState } from "../../context/toggleContext";
 
 export const Navigation = () => {
-  const { toggle } = useToggleContext();
+  const toggle = useRecoilValue(toggleState);
 
   const listArr = [
     {
-      categoryName: "転職",
-      upper: "JOB CHANGE",
+      categoryName: "ホーム",
+      upper: "Home",
+      link: "/",
     },
     {
-      categoryName: "プログラミング",
-      upper: "PROGRAMMING",
+      categoryName: "私について",
+      upper: "About Me",
+      link: "/",
     },
     {
-      categoryName: "エンジニア",
-      upper: "ENGINEER",
+      categoryName: "ポートフォリオ",
+      upper: "Portfolio",
+      link: "/",
     },
     {
-      categoryName: "プライベート",
-      upper: "PRIVATE",
+      categoryName: "ブログ",
+      upper: "Blog",
+      link: "/blog",
     },
   ];
 
@@ -32,6 +37,7 @@ export const Navigation = () => {
             <List
               categoryName={item.categoryName}
               upper={item.upper}
+              link={item.link}
               key={item.categoryName}
             />
           );

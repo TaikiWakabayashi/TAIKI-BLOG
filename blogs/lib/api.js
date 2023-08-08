@@ -8,6 +8,7 @@ export const client = createClient({
   apiKey: process.env.API_KEY,
 });
 
+// SG
 export async function getPostBySlug(slug) {
   try {
     const post = await client.get({
@@ -20,6 +21,7 @@ export async function getPostBySlug(slug) {
   }
 }
 
+// リンクカード用の情報取得
 export const createLinkCardDatas = async (context) => {
   // 対象の投稿のIDを取得
   const id = "qj2miw2od";
@@ -85,4 +87,101 @@ export const createLinkCardDatas = async (context) => {
   cardDatas = temps.filter((temp) => temp !== undefined);
 
   return cardDatas;
+};
+
+// 全スラッグの取得
+export const getAllSlug = async (limit = 100) => {
+  try {
+    const slugs = await client.get({
+      endpoint: "blogs",
+      queries: { fields: "title,slug", orders: "-publishDate", limit: limit },
+    });
+    return slugs.contents;
+  } catch (err) {
+    console.log("--- getAllSlugs ---");
+    console.log(err);
+  }
+};
+
+// 全記事データの取得
+export const getPosts = async (offset = 0, limit = 100) => {
+  try {
+    const posts = await client.get({
+      endpoint: "blogs",
+      queries: {
+        fields: "title,slug,eyecatch,publishDate,categories",
+        orders: "-publishDate",
+        offset: offset,
+        limit: limit,
+      },
+    });
+    return posts;
+  } catch (err) {
+    console.log("--- getAllPosts ---");
+    console.log(err);
+  }
+};
+
+// 個別ページネーション作成用
+export const createSinglePagination = async (id) => {
+  const posts = await client.get({
+    endpoint: "blogs",
+    queries: { offset: (id - 1) * 9, limit: 9 },
+  });
+
+  return posts;
+};
+
+/** ----- 各カテゴリごとのブログ4件を取得するAPI ----- */
+
+// 全てのカテゴリの取得
+export const getAllCategories = async () => {
+  const categories = await client.get({
+    endpoint: "categories",
+    queries: { fields: "id,name" },
+  });
+
+  return categories;
+};
+
+// カテゴリごとのブログを4つずつ取得
+export const getBlog = async (categoryId) => {
+  const blogs = await client.get({
+    endpoint: "blogs",
+    queries: {
+      filters: `categories[equals]${categoryId}`,
+      limit: 4,
+      fields: "title,slug,eyecatch,publishDate,categories",
+    },
+  });
+
+  return blogs;
+};
+
+// 作成日が新しい記事を４記事取得
+export const getBlogBySortCreateDate = async () => {
+  const blogs = await client.get({
+    endpoint: "blogs",
+    queries: {
+      limit: 4,
+      fields: "title,slug,eyecatch,publishDate,categories",
+      orders: "-createdAt",
+    },
+  });
+
+  return blogs;
+};
+
+// pickupがYesの記事を取得
+export const getPickUpBlog = async () => {
+  const blogs = await client.get({
+    endpoint: "blogs",
+    queries: {
+      limit: 6,
+      fields: "title,slug,eyecatch,publishDate,categories,pickup",
+      filters: "pickup[contains]Yes",
+    },
+  });
+
+  return blogs;
 };

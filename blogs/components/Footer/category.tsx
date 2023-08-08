@@ -1,19 +1,21 @@
 import { AiFillFolderOpen } from "react-icons/ai";
 import styles from "./footer.module.css";
-
-const categoryArr = ["転職", "プログラミング", "エンジニア", "プライベート"];
+import { blogsStates } from "../../context/blogContext";
+import { useRecoilValue } from "recoil";
+import { blogObject } from "../../types/props/propsType";
 
 export const Category = () => {
+  const blogState = useRecoilValue(blogsStates);
   return (
     <>
       <ul className={styles.categoryList}>
-        {categoryArr.map((arr) => {
+        {blogState.value.map(({ category }: blogObject, index: number) => {
           return (
-            <li key={arr}>
+            <li key={index}>
               <span>
                 <AiFillFolderOpen />
               </span>
-              {arr}
+              {category}
             </li>
           );
         })}

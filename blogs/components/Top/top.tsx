@@ -1,6 +1,6 @@
 import styles from "./top.module.css";
 import Scroll from "../Scroll/scroll";
-import Tops from "/images/Standing.png";
+import Tops from "/images/Standing.webp";
 import Image from "next/image";
 
 export const Top = () => {
@@ -32,7 +32,7 @@ export const Top = () => {
         <div className={styles.wrapper}>
           <div className={styles.spacer}></div>
           <div className={styles.imageArea}>
-            <Image src={Tops} alt="" />
+            <Image src={Tops} alt="" loading="eager" unoptimized={true} />
           </div>
         </div>
       </div>

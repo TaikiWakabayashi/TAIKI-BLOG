@@ -1,15 +1,33 @@
-type props = {
-  title: string;
-  subTitle: string;
-  imageOn: boolean;
-};
+import { getPosts } from "../../lib/api";
+import MainContainer from "../../components/Container/main-container";
+import Header from "../../components/Header/Header";
+import useHeaderScroll from "../../hooks/useHeaderScroll";
+import { Posts } from "../../components/Posts/Posts";
+import { PageTitle } from "../../components/Title/pageTitle";
+import { Pagination } from "../../components/Pagination/pagination";
 
-export default function Blog({ title, subTitle, imageOn = false }: props) {
+export default function Blog({ posts, totalCount }: any) {
+  const isHeaderActive = useHeaderScroll(300);
+
   return (
     <>
-      <h1>{title}</h1>
-      <p>{subTitle}</p>
-      {imageOn && <figure>[画像]</figure>}
+      <Header isActive={isHeaderActive} />
+      <MainContainer>
+        <PageTitle title="記事一覧" />
+        <Posts posts={posts} />
+        <Pagination totalCount={totalCount} />
+      </MainContainer>
     </>
   );
 }
+
+export const getStaticProps = async () => {
+  const posts = await getPosts(0, 9);
+
+  return {
+    props: {
+      posts: posts.contents,
+      totalCount: posts.totalCount,
+    },
+  };
+};

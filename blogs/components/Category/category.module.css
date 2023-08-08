@@ -1,8 +1,15 @@
-.categorySection {
-  padding: 8rem 0;
-}
+.categorySection,
 .categorySection2 {
   padding: 8rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.categorySection {
+  background-color: white;
+}
+
+.categorySection2 {
   background: #f3f3f3 none;
 }
 
@@ -26,26 +33,27 @@
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-rows: 1fr;
-  margin-bottom: 5rem;
-}
-
-@media (max-width: 834px) {
-  .categoryWrapper {
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 1fr 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-  .categoryWrapper {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-  }
 }
 
 .genre {
+  position: relative;
   font-size: 2.5rem;
   font-weight: bold;
+  border: none;
+  width: fit-content;
+  border: 3px solid black;
+  padding: 10px 20px;
+  background-color: white;
+  text-align: center;
+}
+
+.genre::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  position: absolute;
+  z-index: -1;
 }
 
 .genreSub {
@@ -59,11 +67,36 @@
   width: 100%;
   height: 100%;
   padding: 15px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 270px 150px;
 }
 
 .topImgArea {
   width: 100%;
-  border: 3px solid black;
+  /* max-width: 270px; */
+  height: 100%;
+}
+
+.categoryCard > a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.topImgArea > span {
+  height: 100% !important;
+}
+
+.topImgArea > span > span {
+  padding: 0 !important;
+}
+
+.topImgArea > span > img {
+  width: 100%;
+  /* min-height: 300px !important; */
+  object-fit: contain;
+  margin: 0 !important;
 }
 
 .topImgArea > img {
@@ -71,6 +104,11 @@
   height: 100%;
   object-fit: cover;
 }
+
+.desc > p {
+  word-wrap: break-word;
+}
+
 .categoryList {
   margin: 15px 0;
   padding-left: 2rem;
@@ -81,6 +119,14 @@
   border-bottom: 1px dashed black;
   padding-bottom: 1.2rem;
 }
+
+@media (max-width: 834px) {
+  .categoryWrapper {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
 @media (max-width: 780px) {
   .topImgArea > img {
     width: 100%;
@@ -91,7 +137,7 @@
 @media (max-width: 600px) {
   .categoryWrapper {
     width: 100%;
-    margin: 8rem auto;
+    margin: 2rem auto;
   }
   .categoryCard {
     width: 95%;
@@ -99,5 +145,15 @@
   }
   .topImgArea > img {
     object-fit: cover;
+  }
+}
+
+@media (max-width: 400px) {
+  .categoryWrapper {
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+  .genre {
+    font-size: 2rem;
   }
 }

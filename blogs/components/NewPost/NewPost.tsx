@@ -7,15 +7,16 @@ import WideButton from "../Button/widebutton";
 const NewPost = () => {
   return (
     <section className={styles.newpostSection}>
-      <h1>
+      <h1 className={styles.title}>
         NEW POSTS<span className={styles.subTitle}>新着情報</span>
       </h1>
+      <div className={styles.triangle}></div>
       <MainContainer>
         <div className={styles.postWrapper}>
           <LatestPost />
           <PostList />
         </div>
-        <WideButton title="SEE MORE" />
+        <WideButton title="記事一覧へ" url="/blog" />
       </MainContainer>
     </section>
   );

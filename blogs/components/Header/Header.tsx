@@ -2,30 +2,17 @@ import { Logo } from "./Logo";
 import { Navigation } from "./Navigation";
 import { NavButton } from "./NavButton";
 import styles from "./header.module.css";
-import { createContext, useContext } from "react";
-import { useState } from "react";
-import { Dispatch } from "react";
-import { SetStateAction } from "react";
+import type { headerProps } from "../../types/props/propsType";
+import { memo } from "react";
 
-export const ToggleContext = createContext(
-  {} as { toggle: boolean; setToggle: Dispatch<SetStateAction<boolean>> }
-);
-
-type headerProps = {
-  isActive: boolean;
-};
-
-export const Header = ({ isActive }: headerProps) => {
-  const [toggle, setToggle] = useState(false);
+export const Header = memo(({ isActive }: headerProps) => {
   return (
     <>
       <header className={styles.header}>
         <div className={styles.headerWrapper}>
           <Logo />
-          <ToggleContext.Provider value={{ toggle, setToggle }}>
-            <Navigation />
-            <NavButton />
-          </ToggleContext.Provider>
+          <Navigation />
+          <NavButton />
         </div>
       </header>
       <header
@@ -37,18 +24,12 @@ export const Header = ({ isActive }: headerProps) => {
       >
         <div className={styles.headerWrapper}>
           <Logo />
-          <ToggleContext.Provider value={{ toggle, setToggle }}>
-            <Navigation />
-            <NavButton />
-          </ToggleContext.Provider>
+          <Navigation />
+          <NavButton />
         </div>
       </header>
     </>
   );
-};
+});
 
 export default Header;
-
-export const useToggleContext = () => {
-  return useContext(ToggleContext);
-};

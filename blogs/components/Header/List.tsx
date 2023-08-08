@@ -1,15 +1,13 @@
 import Link from "next/link";
 import styles from "./header.module.css";
-import { useToggleContext } from "./Header";
 import { SubTitle } from "./SubTitle";
+import { useSetRecoilState } from "recoil";
+import { toggleState } from "../../context/toggleContext";
+import { memo } from "react";
+import { headerListProps } from "../../types/props/propsType";
 
-type props = {
-  categoryName: string;
-  upper: string;
-};
-
-export const List = ({ categoryName, upper }: props) => {
-  const { toggle, setToggle } = useToggleContext();
+export const List = memo(({ categoryName, upper, link }: headerListProps) => {
+  const setToggle = useSetRecoilState(toggleState);
 
   const closeNav = () => {
     setToggle(false);
@@ -17,10 +15,10 @@ export const List = ({ categoryName, upper }: props) => {
 
   return (
     <li>
-      <Link href="#" onClick={closeNav}>
+      <Link href={link} onClick={closeNav}>
         {categoryName}
         <SubTitle title={upper} />
       </Link>
     </li>
   );
-};
+});

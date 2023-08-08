@@ -1,6 +1,7 @@
 import styles from "./pickup.module.css";
 import MainContainer from "../Container/main-container";
 import PickupItem from "./pickupItem";
+import WideButton from "../Button/widebutton";
 
 const PickUp = () => {
   return (
@@ -11,12 +12,8 @@ const PickUp = () => {
       <MainContainer>
         <div className={styles.pickupWrapper}>
           <PickupItem />
-          <PickupItem />
-          <PickupItem />
-          <PickupItem />
-          <PickupItem />
-          <PickupItem />
         </div>
+        <WideButton title="記事一覧へ" url="/blog" />
       </MainContainer>
     </section>
   );

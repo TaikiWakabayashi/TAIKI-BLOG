@@ -1,28 +1,35 @@
-import MainContainer from "../Container/main-container";
-import CategoryTitle from "./categoryTitle";
 import CCard from "./cCard";
 import styles from "./category.module.css";
-import WideButton from "../Button/widebutton";
+import { useRecoilValue } from "recoil";
+import { blogsStates } from "../../context/blogContext";
+import type { categoryPageComponentProps } from "../../types/props/propsType";
 
-type propsType = {
-  title: string;
-  subTitle: string;
-};
+const CategorySection = ({
+  categoryName,
+}: Pick<categoryPageComponentProps, "categoryName">) => {
+  const blogState = useRecoilValue(blogsStates);
 
-const CategorySection = ({ title, subTitle }: propsType) => {
+  const extractCategoryBlogs = blogState.value.filter((blog) => {
+    return blog.category === categoryName;
+  });
   return (
-    <MainContainer>
-      <CategoryTitle title={title} subTitle={subTitle} />
-      <div>
-        <div className={styles.categoryWrapper}>
-          <CCard />
-          <CCard />
-          <CCard />
-          <CCard />
-        </div>
-        <WideButton title="SEE MORE" />
+    <>
+      <div className={styles.categoryWrapper}>
+        {extractCategoryBlogs[0].blogs.map(
+          ({ title, publishDate, eyecatch, slug }, index) => {
+            return (
+              <CCard
+                key={index}
+                title={title}
+                publishDate={publishDate}
+                eyecatch={eyecatch}
+                slug={slug}
+              />
+            );
+          }
+        )}
       </div>
-    </MainContainer>
+    </>
   );
 };
 

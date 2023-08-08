@@ -1,21 +1,34 @@
 import styles from "./category.module.css";
-import Logo from "/images/face-logo.jpg";
-import Image from "next/image";
+import Image from "next/legacy/image";
+import { contentsType } from "../../types/props/propsType";
+import ConvertDate from "../Date/convertDate";
+import Link from "next/link";
 
-const CCard = () => {
+const CCard = ({
+  title,
+  publishDate,
+  eyecatch,
+  slug,
+}: Pick<contentsType, "title" | "publishDate" | "eyecatch" | "slug">) => {
   return (
     <div className={styles.categoryCard}>
-      <div className={styles.topImgArea}>
-        <Image src={Logo} alt="" />
-      </div>
-      <div>
-        <p>
-          <time>YEAR / MONTH / DAY</time>
-        </p>
-        <p>
-          Description・Description・Description・Description・Description・Description・Description・Description・Description・Description
-        </p>
-      </div>
+      <Link href={`/blog/${slug}`}>
+        <div className={styles.topImgArea}>
+          <Image
+            src={eyecatch.url}
+            alt=""
+            width={eyecatch.width}
+            height={eyecatch.height}
+            layout="responsive"
+          />
+        </div>
+        <div className={styles.desc}>
+          <p>
+            <ConvertDate dateISO={publishDate} />
+          </p>
+          <p>{title}</p>
+        </div>
+      </Link>
     </div>
   );
 };
