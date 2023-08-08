@@ -82,3 +82,8 @@ export type headerListProps = {
 export type ComponentPropsByContents = {
   contents: contentsType;
 };
+
+export type MetaComponentProps = {
+  pageTitle: string;
+  pageDesc?: string;
+};

@@ -8,6 +8,7 @@ import MainContainer from "../../../components/Container/main-container";
 import { PageTitle } from "../../../components/Title/pageTitle";
 import useHeaderScroll from "../../../hooks/useHeaderScroll";
 import React from "react";
+import { Meta } from "../../../components/Meta/meta";
 
 const PER_PAGE = 9;
 
@@ -15,6 +16,7 @@ const BlogPageId = React.memo(({ posts, totalCount }: any) => {
   const isHeaderActive = useHeaderScroll(300);
   return (
     <>
+      <Meta pageTitle="記事一覧" pageDesc="ブログ記事一覧" />
       <Header isActive={isHeaderActive} />
       <MainContainer>
         <PageTitle title="記事一覧" />

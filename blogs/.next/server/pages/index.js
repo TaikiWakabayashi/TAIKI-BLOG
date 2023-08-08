@@ -801,8 +801,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var recoil__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(9755);
 /* harmony import */ var recoil__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(recoil__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _context_blogContext__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(9119);
+/* harmony import */ var _components_Meta_meta__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(5572);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_lib_api__WEBPACK_IMPORTED_MODULE_8__]);
 _lib_api__WEBPACK_IMPORTED_MODULE_8__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+
 
 
 
@@ -830,6 +832,10 @@ const Home = ({ blogs , newPosts , pickupPosts  })=>{
     }, []);
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Meta_meta__WEBPACK_IMPORTED_MODULE_12__/* .Meta */ .h, {
+                pageTitle: "HOME",
+                pageDesc: "お金と転職のブログ"
+            }),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Header_Header__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
                 isActive: isHeaderActive
             }),
@@ -1063,6 +1069,22 @@ module.exports = require("next/dist/shared/lib/utils/warn-once.js");
 
 /***/ }),
 
+/***/ 968:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/head");
+
+/***/ }),
+
+/***/ 1853:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/router");
+
+/***/ }),
+
 /***/ 6689:
 /***/ ((module) => {
 
@@ -1110,7 +1132,7 @@ module.exports = import("cheerio");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [636,877,675,976,33], () => (__webpack_exec__(2603)));
+var __webpack_exports__ = __webpack_require__.X(0, [636,877,675,803,33], () => (__webpack_exec__(2603)));
 module.exports = __webpack_exports__;
 
 })();

@@ -17,7 +17,6 @@ import type {
   categories,
   blogObject,
   blogApiResponseType,
-  contentsType,
 } from "../types/props/propsType";
 import { useEffect } from "react";
 import { useRecoilState, useSetRecoilState } from "recoil";
@@ -26,6 +25,7 @@ import {
   newPostStates,
   pickupStates,
 } from "../context/blogContext";
+import { Meta } from "../components/Meta/meta";
 
 const Home: NextPage = ({ blogs, newPosts, pickupPosts }: any) => {
   const isHeaderActive: boolean = useHeaderScroll(300);
@@ -43,6 +43,7 @@ const Home: NextPage = ({ blogs, newPosts, pickupPosts }: any) => {
 
   return (
     <>
+      <Meta pageTitle="HOME" pageDesc="お金と転職のブログ" />
       <Header isActive={isHeaderActive} />
       <Top />
       <NewPost />

@@ -5,6 +5,25 @@ exports.id = 660;
 exports.ids = [660];
 exports.modules = {
 
+/***/ 502:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "N": () => (/* binding */ siteMeta)
+/* harmony export */ });
+const siteMeta = {
+    siteTitle: "WAKA-BLOG",
+    siteDesc: "お金と転職のブログ",
+    siteUrl: "https://*******/",
+    siteLang: "ja",
+    siteLocale: "ja_JP",
+    siteType: "website",
+    siteIcon: "/favicon.ico"
+};
+
+
+/***/ }),
+
 /***/ 3162:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -15,10 +34,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_document__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6859);
+/* harmony import */ var _lib_constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(502);
 
 
+
+const { siteLang  } = _lib_constants__WEBPACK_IMPORTED_MODULE_2__/* .siteMeta */ .N;
 function Document() {
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(next_document__WEBPACK_IMPORTED_MODULE_1__.Html, {
+        lang: siteLang,
         children: [
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(next_document__WEBPACK_IMPORTED_MODULE_1__.Head, {
                 children: [

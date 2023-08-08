@@ -35,7 +35,7 @@ const Post = ({
 
   return (
     <div style={bYellow}>
-      <Meta pageTitle={title} />
+      <Meta pageTitle={title} pageDesc={title} />
       <Header isActive={isHeaderActive} />
       <MainContainer>
         <article style={p}>
