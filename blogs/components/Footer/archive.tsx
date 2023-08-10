@@ -1,27 +1,26 @@
 import styles from "./footer.module.css";
-
-const monthArr = [
-  "1月",
-  "2月",
-  "3月",
-  "4月",
-  "5月",
-  "6月",
-  "7月",
-  "8月",
-  "9月",
-  "10月",
-  "11月",
-  "12月",
-];
+import { useRecoilValue } from "recoil";
+import { convertDateStates } from "../../context/blogContext";
+import { useRouter } from "next/router";
 
 const Archive = () => {
+  const convertDates = useRecoilValue(convertDateStates);
+
+  const router = useRouter();
+
   return (
     <div className={styles.InputArea}>
-      <select className={styles.pullDown}>
+      <select
+        className={styles.pullDown}
+        onChange={(e) => router.push(`/blog/archives/${e.target.value}`)}
+      >
         <option>月を選択</option>
-        {monthArr.map((month) => {
-          return <option key={month}>{month}</option>;
+        {convertDates.map((month) => {
+          return (
+            <option key={month} value={month}>
+              {month}
+            </option>
+          );
         })}
       </select>
     </div>

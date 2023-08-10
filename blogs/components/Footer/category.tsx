@@ -3,19 +3,22 @@ import styles from "./footer.module.css";
 import { blogsStates } from "../../context/blogContext";
 import { useRecoilValue } from "recoil";
 import { blogObject } from "../../types/props/propsType";
+import Link from "next/link";
 
 export const Category = () => {
   const blogState = useRecoilValue(blogsStates);
   return (
     <>
       <ul className={styles.categoryList}>
-        {blogState.value.map(({ category }: blogObject, index: number) => {
+        {blogState.value.map(({ id, category }: blogObject, index: number) => {
           return (
-            <li key={index}>
-              <span>
-                <AiFillFolderOpen />
-              </span>
-              {category}
+            <li key={index} className={styles.categoryItem}>
+              <Link href={`/blog/categories/${id}`}>
+                <span>
+                  <AiFillFolderOpen />
+                </span>
+                {category}
+              </Link>
             </li>
           );
         })}

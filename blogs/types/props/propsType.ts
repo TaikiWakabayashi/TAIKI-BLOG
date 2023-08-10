@@ -45,6 +45,10 @@ export type categories = {
   slug: string;
 };
 
+export type categoriesApiResponseType = {
+  contents: categories[];
+};
+
 export type contentsType = {
   title: string;
   slug: string;
@@ -64,11 +68,13 @@ export type blogApiResponseType = {
 export type getStaticPropsResponseArray = blogApiResponseType[];
 
 export type blogObject = {
+  id: string;
   category: string;
   blogs: contentsType[];
 };
 
 export type categoryPageComponentProps = {
+  id: string;
   categoryName: string;
   index: number;
 };
@@ -86,4 +92,28 @@ export type ComponentPropsByContents = {
 export type MetaComponentProps = {
   pageTitle: string;
   pageDesc?: string;
+};
+
+export type categoriesProps = {
+  posts: contentsType[];
+  totalCount: number;
+};
+
+export type categoryObjArrayType = {
+  id: string;
+  name: string;
+};
+
+export type publishDateApiResponse = {
+  contents: Pick<contentsType, "publishDate">[];
+};
+
+export type archiveResponse = {
+  date: string;
+  blogs: contentsType[];
+  count: number;
+};
+
+export type archiveProps = {
+  posts: archiveResponse;
 };

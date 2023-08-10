@@ -15,12 +15,12 @@ export const Navigation = () => {
     {
       categoryName: "私について",
       upper: "About Me",
-      link: "/",
+      link: "/about",
     },
     {
       categoryName: "ポートフォリオ",
       upper: "Portfolio",
-      link: "/",
+      link: "/portfolio",
     },
     {
       categoryName: "ブログ",

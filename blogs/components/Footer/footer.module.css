@@ -95,6 +95,15 @@
   padding: 15px 10px;
 }
 
+.categoryItem {
+  width: 100%;
+}
+
+.categoryItem > a {
+  display: inline-block;
+  width: 100%;
+}
+
 @media (max-width: 834px) {
   .footerWrapper {
     width: 80%;

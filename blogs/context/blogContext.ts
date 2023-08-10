@@ -15,3 +15,8 @@ export const pickupStates = atom({
   key: "pickupStates",
   default: [] as contentsType[],
 });
+
+export const convertDateStates = atom({
+  key: "convertDateStates",
+  default: [] as string[],
+});

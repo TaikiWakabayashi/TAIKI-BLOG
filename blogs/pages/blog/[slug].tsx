@@ -1,9 +1,7 @@
 import { getPostBySlug, getAllSlug } from "../../lib/api";
-import Header from "../../components/Header/Header";
 import MainContainer from "../../components/Container/main-container";
 import type { props } from "../../types/props/propsType";
 import PostHeader from "../../components/Header/PostHeader";
-import useHeaderScroll from "../../hooks/useHeaderScroll";
 import { PostBody } from "../../components/ContentStyle/PostBody";
 import ConvertBody from "../../components/ContentStyle/ConvertBody";
 import "highlight.js/styles/hybrid.css";
@@ -24,8 +22,6 @@ const Post = ({
   cardDatas,
   description,
 }: props) => {
-  const isHeaderActive = useHeaderScroll(300);
-
   const bYellow = {
     backgroundColor: "#f0eb45",
   };
@@ -36,7 +32,6 @@ const Post = ({
   return (
     <div style={bYellow}>
       <Meta pageTitle={title} pageDesc={title} />
-      <Header isActive={isHeaderActive} />
       <MainContainer>
         <article style={p}>
           <ColumnMain>

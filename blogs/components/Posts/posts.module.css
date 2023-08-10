@@ -9,6 +9,20 @@
   grid-template-rows: repeat(3, 1fr);
 }
 
+@media (max-width: 600px) {
+  .postWrapper {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .postWrapper {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+  }
+}
+
 .itemWrapper {
   position: relative;
   width: 100%;

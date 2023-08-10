@@ -9,24 +9,26 @@ import type {
 } from "../../types/props/propsType";
 import WideButton from "../Button/widebutton";
 
-const Category = memo(({ categoryName, index }: categoryPageComponentProps) => {
-  return (
-    <>
-      <section
-        className={
-          index % 2 == 0
-            ? `${styles.categorySection}`
-            : `${styles.categorySection2}`
-        }
-      >
-        <MainContainer>
-          <CategoryTitle title={categoryName} subTitle="" />
-          <CategorySection categoryName={categoryName} />
-          <WideButton title="カテゴリ一覧へ" url="/" />
-        </MainContainer>
-      </section>
-    </>
-  );
-});
+const Category = memo(
+  ({ id, categoryName, index }: categoryPageComponentProps) => {
+    return (
+      <>
+        <section
+          className={
+            index % 2 == 0
+              ? `${styles.categorySection}`
+              : `${styles.categorySection2}`
+          }
+        >
+          <MainContainer>
+            <CategoryTitle title={categoryName} subTitle="" />
+            <CategorySection categoryName={categoryName} />
+            <WideButton title="カテゴリ一覧へ" url={`/blog/categories/${id}`} />
+          </MainContainer>
+        </section>
+      </>
+    );
+  }
+);
 
 export default Category;

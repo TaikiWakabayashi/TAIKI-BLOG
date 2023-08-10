@@ -138,19 +138,19 @@ export const createSinglePagination = async (id) => {
 export const getAllCategories = async () => {
   const categories = await client.get({
     endpoint: "categories",
-    queries: { fields: "id,name" },
+    queries: { fields: "id,name,slug" },
   });
 
   return categories;
 };
 
 // カテゴリごとのブログを4つずつ取得
-export const getBlog = async (categoryId) => {
+export const getBlog = async (categoryId, limit = 100) => {
   const blogs = await client.get({
     endpoint: "blogs",
     queries: {
       filters: `categories[equals]${categoryId}`,
-      limit: 4,
+      limit: limit,
       fields: "title,slug,eyecatch,publishDate,categories",
     },
   });
@@ -180,6 +180,32 @@ export const getPickUpBlog = async () => {
       limit: 6,
       fields: "title,slug,eyecatch,publishDate,categories,pickup",
       filters: "pickup[contains]Yes",
+    },
+  });
+
+  return blogs;
+};
+
+// 投稿日を取得
+export const getPublishDates = async () => {
+  const blogs = await client.get({
+    endpoint: "blogs",
+    queries: {
+      limit: 100,
+      fields: "publishDate",
+    },
+  });
+
+  return blogs;
+};
+
+// 投稿日を取得
+export const getBlogByPublishDates = async (publishDate) => {
+  const blogs = await client.get({
+    endpoint: "blogs",
+    queries: {
+      limit: 100,
+      filters: `publishDate[contains]${publishDate}`,
     },
   });
 
