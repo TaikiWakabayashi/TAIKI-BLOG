@@ -12,7 +12,7 @@ export default function Blog({ posts, totalCount }: any) {
       <MainContainer>
         <PageTitle title="記事一覧" />
         <Posts posts={posts} />
-        <Pagination totalCount={totalCount} />
+        <Pagination totalCount={totalCount} id={1} />
       </MainContainer>
     </>
   );
