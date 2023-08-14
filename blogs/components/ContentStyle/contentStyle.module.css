@@ -8,13 +8,16 @@
 }
 
 .stack h2 + *,
-.stack h3 + * {
-  --stack-space: 0.8em;
-}
-
+.stack h3 + *,
 .stack h4 + *,
 .stack h5 + * {
   --stack-space: 0.8em;
+}
+
+.stack h4,
+.stack h5 {
+  --stack-space: 1.5em;
+  margin-bottom: 0;
 }
 
 .stack p {

@@ -17,8 +17,8 @@ export const ConvertBody = ({ contentHTML, cardDatas }) => {
             <Image
               layout="responsive"
               src={src}
-              width={changeWidth}
-              height={changeHeight}
+              width={width}
+              height={height}
               alt={alt}
               sizes="(max-width: 1200px)"
             />
