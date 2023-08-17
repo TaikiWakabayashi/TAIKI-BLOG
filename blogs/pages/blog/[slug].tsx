@@ -72,11 +72,18 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context: any) => {
   const slug = context.params.slug;
 
+  console.log("--- context ---");
+  console.log(context);
+
   // スラッグごとの記事データの取得
   const post = await getPostBySlug(slug);
+  console.log("--- post ---");
+  console.log(post);
 
   // リンクカードを作成するデータを取得
-  const cardDatas = await createLinkCardDatas(context);
+  const cardDatas = await createLinkCardDatas(context, post.id);
+  console.log("--- cardDatas ---");
+  console.log(cardDatas);
 
   // Meta情報の取得
   const description = extractText(post.content);

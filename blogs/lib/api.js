@@ -22,9 +22,9 @@ export async function getPostBySlug(slug) {
 }
 
 // リンクカード用の情報取得
-export const createLinkCardDatas = async (context) => {
+export const createLinkCardDatas = async (context, id) => {
   // 対象の投稿のIDを取得
-  const id = "qj2miw2od";
+  // const id = "qj2miw2od";
   const draftKey = context.previewData?.draftKey;
 
   // 記事取得

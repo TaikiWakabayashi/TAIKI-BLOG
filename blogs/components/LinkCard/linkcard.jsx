@@ -1,16 +1,22 @@
 import styles from "./linkCard.module.css";
 import Link from "next/link";
+import { LinkCardDescription } from "./linkCardDescription";
 
 const LinkCard = ({ cardData, children }) => {
   //内部リンクか外部リンク化判定
-  const blank = cardData.url.indexOf(process.env.SERVICE_DOMAIN) === -1;
+  let blank = false;
+  if (cardData != null || cardData != undefined) {
+    blank = cardData.url.indexOf(process.env.SERVICE_DOMAIN) === -1;
+  } else {
+    blank = false;
+  }
   const blankProp = blank
     ? {
         target: "_blank",
         rel: "noopener nofollow",
       }
     : {};
-  if (cardData.title) {
+  if (cardData != null || cardData != undefined) {
     return (
       <div className={styles.linkCardWrapper}>
         <div className={styles.images}>
@@ -24,7 +30,9 @@ const LinkCard = ({ cardData, children }) => {
               {cardData.title && cardData.title}
             </Link>
           </p>
-          <span>{cardData.description && cardData.description}</span>
+          {cardData.description && (
+            <LinkCardDescription description={cardData.description} />
+          )}
         </div>
       </div>
     );
@@ -33,6 +41,7 @@ const LinkCard = ({ cardData, children }) => {
     <Link href={cardData.url} {...blankProp} underline="none">
       {children}
     </Link>
+    // <p>Hello</p>
   );
 };
 
