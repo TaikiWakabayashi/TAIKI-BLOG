@@ -3,7 +3,7 @@ import MainContainer from "../Container/main-container";
 import FooterItem from "./footerItem";
 import React from "react";
 
-const Footer = React.memo(() => {
+const Footer = () => {
   const domObj = [
     {
       _className: "profile",
@@ -34,6 +34,6 @@ const Footer = React.memo(() => {
       </MainContainer>
     </footer>
   );
-});
+};
 
 export default Footer;

@@ -7,6 +7,8 @@ import Link from "next/link";
 
 export const Category = () => {
   const blogState = useRecoilValue(blogsStates);
+  console.log("--- blogState ---");
+  console.log(blogState);
   return (
     <>
       <ul className={styles.categoryList}>

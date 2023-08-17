@@ -20,6 +20,8 @@ export const Meta = ({ pageTitle, pageDesc }: MetaComponentProps) => {
   const width = opgImg.width.toString();
   const height = opgImg.height.toString();
   const imgUrl = img.startsWith("https") ? img : `${siteUrl}${img}`;
+  console.log("--- igmUrl ---");
+  console.log(imgUrl);
   return (
     <Head>
       <title>{title}</title>

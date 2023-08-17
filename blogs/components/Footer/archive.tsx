@@ -5,6 +5,8 @@ import { useRouter } from "next/router";
 
 const Archive = () => {
   const convertDates = useRecoilValue(convertDateStates);
+  console.log("--- convertDates ---");
+  console.log(convertDates);
 
   const router = useRouter();
 
